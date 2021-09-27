@@ -36,7 +36,7 @@ export default function List({state, setState}) {
             </ul>
 
             <div className="filter-wrapper">
-                <a href="#">{length} items left</a>
+                <p>{length} items left</p>
                 <div className="inner-filter-wrapper">
                     <a href="#" onClick={() => filterClicked(0)} >All</a>
                     <a href="#" onClick={() => filterClicked(1)} >Active</a>
