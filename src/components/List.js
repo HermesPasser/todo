@@ -38,11 +38,11 @@ export default function List({state, setState}) {
             <div className="filter-wrapper">
                 <p>{length} items left</p>
                 <div className="inner-filter-wrapper">
-                    <a href="#" onClick={() => filterClicked(0)} >All</a>
-                    <a href="#" onClick={() => filterClicked(1)} >Active</a>
-                    <a href="#" onClick={() => filterClicked(2)} >Completed</a>
+                    <span onClick={() => filterClicked(0)} >All</span>
+                    <span onClick={() => filterClicked(1)} >Active</span>
+                    <span onClick={() => filterClicked(2)} >Completed</span>
                 </div>
-                <a href="#" onClick={clearClicked}>Clear Completed</a>
+                <span onClick={clearClicked}>Clear Completed</span>
             </div>
         </div>
     )    
