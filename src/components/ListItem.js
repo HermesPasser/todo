@@ -17,8 +17,10 @@ export default function ListItem({state, setState, label, value, checked}) {
 
     return (
         <li className="list-item">
-            <input type="checkbox" value={value} checked={checked} onChange={handleChecked} />
-            <label>{label}</label>
+            <div>
+                <input type="checkbox" value={value} checked={checked} onChange={handleChecked} />
+                <label>{label}</label>
+            </div>
             <button onClick={closeClicked}>
                 <img src={Cross} alt="x icon" />
             </button>
