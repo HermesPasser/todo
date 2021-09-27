@@ -1,3 +1,4 @@
+import Cross from "../assets/icon-cross.svg"
 
 export default function ListItem({state, setState, label, value, checked}) {
     const handleChecked = (event) => {
@@ -18,7 +19,9 @@ export default function ListItem({state, setState, label, value, checked}) {
         <li className="list-item">
             <input type="checkbox" value={value} checked={checked} onChange={handleChecked} />
             <label>{label}</label>
-            <button onClick={closeClicked}>x</button>
+            <button onClick={closeClicked}>
+                <img src={Cross} alt="x icon" />
+            </button>
         </li>
     )    
 }
