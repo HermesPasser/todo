@@ -16,7 +16,7 @@ export default function List({state, setState}) {
     const filterClicked = (id) => setState({...state, activeFilter: id})
     const clearClicked = () => setState({
         ...state, 
-        listItems: state.listItems.filter(item => item.done)        
+        listItems: state.listItems.filter(item => !item.done)        
     })
 
     return (
