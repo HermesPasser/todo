@@ -18,7 +18,7 @@ function App() {
 				</button>
 			</header>
 			<NewItem state={state} setState={setState} />
-			<List />
+			<List state={state} setState={setState} />
 			<p>Drag and drop to reorder list</p>
 		</main>
 	)
