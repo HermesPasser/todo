@@ -9,12 +9,24 @@ import './index.css';
 function App() {
 	const [state, setState] = useState(initialState)
 
+	const modeToggleClicked = () => {
+		const newMode = !state.darkMode
+		// const newClass = newMode ? 'dark' : 'light'
+		// const oldClass = newMode ? 'light' : 'dark'
+		setState({...state, darkMode: newMode})
+
+		document.body.classList.toggle("dark");
+	}
+
 	return (
 		<main className="App">
 			<header>
 				<h1>TODO</h1>
 				<button id="dark-mode-btn">
-					<img src={MoonIcon} alt="Icon representing the sun on the dark mode and the moon on the light mode" />
+					<img src={MoonIcon} 
+						alt="Icon representing the sun on the dark mode and the moon on the light mode" 
+						onClick={modeToggleClicked}
+					/>
 				</button>
 			</header>
 			<NewItem state={state} setState={setState} />
