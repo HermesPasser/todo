@@ -1,8 +1,5 @@
-import { useState } from "react"
 
-export default function ListItem({state, setState, label, value, checked = false}) {
-    const [done, setCompletion] = useState(checked)
-
+export default function ListItem({state, setState, label, value, checked}) {
     const handleChecked = (event) => {
         const done_ = event.target.checked
         let items = [...state.listItems]
@@ -10,12 +7,11 @@ export default function ListItem({state, setState, label, value, checked = false
         items[index]['done'] = done_
 
         setState({...state, listItems: items})
-        setCompletion(done_)
     }
-    
+
     return (
         <li className="list-item">
-            <input type="checkbox" value={value} checked={done} onChange={handleChecked} />
+            <input type="checkbox" value={value} checked={checked} onChange={handleChecked} />
             <label>{label}</label>
         </li>
     )    
