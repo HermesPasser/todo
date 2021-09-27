@@ -1,7 +1,7 @@
 import ListItem from "./ListItem";
 
 export default function List({state, setState}) {
-    const items = state.listItems
+    const items = [...state.listItems]
     const length = items.length
     let itemsOnDisplay = []
 
