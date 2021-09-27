@@ -19,7 +19,7 @@ function App() {
 			</header>
 			<NewItem state={state} setState={setState} />
 			<List state={state} setState={setState} />
-			<p>Drag and drop to reorder list</p>
+			<p className="drag-text">Drag and drop to reorder list</p>
 		</main>
 	)
 }
