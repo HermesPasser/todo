@@ -1,5 +1,5 @@
 import Cross from "../assets/icon-cross.svg"
-import { Draggable } from 'react-beautiful-dnd';
+import { Draggable } from 'react-beautiful-dnd'
 
 export default function ListItem({state, setState, label, value, id, checked}) {
     const class_ = checked ? 'completed-task' : '' 
@@ -28,7 +28,7 @@ export default function ListItem({state, setState, label, value, id, checked}) {
                     {...provided.dragHandleProps}
                     >
                     <div>
-                        <input type="checkbox" value={value} checked={checked} onChange={handleChecked} />
+                        <input type="checkbox" className="checkbox-round" value={value} checked={checked} onChange={handleChecked} />
                         <label className={class_}>{label}</label>
                     </div>
                     <button onClick={closeClicked}>

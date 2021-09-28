@@ -25,7 +25,8 @@ export default function NewItem({state, setState}) {
 
 	return (
 		<div className="new-todo-wrapper">
-			<input type="checkbox" checked={done} onChange={handleChecked} />
+			<input type="checkbox" className="checkbox-round" checked={done} onChange={handleChecked} />
+
 			<input type="text" placeholder="Create a new todo..." 
 				value={text}
 				onKeyDown={addItem} 

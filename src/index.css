@@ -6,7 +6,7 @@
 :root {
 	/* Primary */
 	--bright-blue: hsl(220, 98%, 61%);
-	--check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+	--check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 	/* Ligth theme */
 	--very-light-gray: hsl(0, 0%, 98%);
@@ -155,6 +155,12 @@ ul {
 	padding-left: 10px;
 }
 
+/* checkbox */
+
+.checkbox-round {
+	margin-left: 10px;
+}
+
 input[type="text"] {
 	border: none
 }
@@ -171,3 +177,23 @@ input[type="text"] {
 	text-decoration: line-through;
 	color: var(--text-grayed);
 }
+
+.checkbox-round {
+    width: 1.8em;
+    height: 1.8em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+	content: "";
+    border: 1px solid #ddd;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+	/* background-image: url('assets/icon-check.svg'); */
+	background-image: var(--check-background);
+} 
+
+/* end - checkbox */
