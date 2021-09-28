@@ -120,6 +120,7 @@ header button {
     padding: 15px;
 	color: var(--text-bottom);
 	font-size: small;
+	font-weight: 300;
 }
 
 .inner-filter-wrapper span:nth-child(2) {
@@ -153,6 +154,7 @@ input[type="text"] {
 	text-align: center;
 	color: var(--text-bottom);
 	font-size: small;
+	font-weight: 300;
 }
 
 .completed-task {
