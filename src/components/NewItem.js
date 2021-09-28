@@ -9,14 +9,16 @@ export default function NewItem({state, setState}) {
 
 	const addItem = (key) => {
 		const enterKeyCodes = 13
+		const newId = state.listLastIdUsed +1
+
 		if (key.keyCode !== enterKeyCodes)
 			return
 		
 		if (text.trim() === '')
 			return
 
-		const newItem = { 'text': text, 'done': done}
-		setState({...state,  listItems: [...state.listItems, newItem]})
+		const newItem = { 'text': text, 'done': done, id: newId }
+		setState({...state,  listLastIdUsed: newId,listItems: [...state.listItems, newItem]})
 		setCompletion(false)
 		setText('')
 	}

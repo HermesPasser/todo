@@ -30,6 +30,7 @@ export default function List({state, setState}) {
                             
                             label={item.text}
                             checked={item.done}
+                            id={item.id}
                             value={i}  /> 
                     })
                 }

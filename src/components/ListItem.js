@@ -1,17 +1,17 @@
 import Cross from "../assets/icon-cross.svg"
 
-export default function ListItem({state, setState, label, value, checked}) {
+export default function ListItem({state, setState, label, value, id, checked}) {
     const handleChecked = (event) => {
         const done_ = event.target.checked
         let items = [...state.listItems]
-        const index = items.findIndex(item => item.text === label)
+        const index = items.findIndex(item => item.id === id)
         items[index]['done'] = done_
 
         setState({...state, listItems: items})
     }
 
     const closeClicked = (event) => {
-        let itemsCopy = [...state.listItems].filter(item => item.text !== label)
+        let itemsCopy = [...state.listItems].filter(item => item.id !== id)
         setState({...state, listItems: itemsCopy})
     }
     const class_ = checked ? 'completed-task' : '' 
