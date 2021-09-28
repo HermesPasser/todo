@@ -167,3 +167,7 @@ input[type="text"] {
 	text-align: center;
 	color: var(--text-bottom);
 }
+
+.completed-task {
+	text-decoration: line-through;
+}

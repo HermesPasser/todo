@@ -14,12 +14,12 @@ export default function ListItem({state, setState, label, value, checked}) {
         let itemsCopy = [...state.listItems].filter(item => item.text !== label)
         setState({...state, listItems: itemsCopy})
     }
-
+    const class_ = checked ? 'completed-task' : '' 
     return (
         <li className="list-item">
             <div>
                 <input type="checkbox" value={value} checked={checked} onChange={handleChecked} />
-                <label>{label}</label>
+                <label className={class_}>{label}</label>
             </div>
             <button onClick={closeClicked}>
                 <img src={Cross} alt="x icon" />
