@@ -31,7 +31,7 @@ export default function List({state, setState}) {
 
         setState({ ...state, listItems: items })  
     }
-
+    
     return (
         <DragDropContext onDragEnd={itemDragged}>
             <Droppable droppableId="list">
@@ -62,7 +62,9 @@ export default function List({state, setState}) {
                                 <span onClick={clearClicked}>Clear Completed</span>
                             </div>
                         </div>
-                       
+                        <div className="out-filter-wrapper">
+                            <FIlterOptions state={state} setState={setState} />
+                        </div>
                     </Fragment>
                 }
             </Droppable>

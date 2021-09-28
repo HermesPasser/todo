@@ -25,7 +25,7 @@
 }
 
 body {
-	--bg: white;
+	--bg: rgb(245, 245, 245);
 	--fg: var(--very-light-gray);
 	--border: var(--very-light-grayish-blu);
 	--border-bottom: var(--dark-grayish-blue);
@@ -137,6 +137,10 @@ header button {
 	margin: 0px 10px 0px 10px;
 }
 
+.out-filter-wrapper {
+	display: none;
+}
+
 ul {
     list-style-type: none;
 }
@@ -197,3 +201,39 @@ input[type="text"] {
 } 
 
 /* end - checkbox */
+
+@media (max-width: 375px) {
+	
+	body {
+	
+		
+		background-image: url('assets/bg-mobile-light.jpg');
+		background-repeat: no-repeat;
+		
+		background-color: var(--bg);
+	}
+
+	.dark {
+		background-image: url('assets/bg-mobile-dark.jpg');
+	}
+	
+	main {
+		width: 90%;
+	}
+	
+	.inner-filter-wrapper  {
+		display: none;
+	}
+	
+	.out-filter-wrapper {
+		background-color: var(--fg);
+		color: var(--text-bottom);
+		justify-content: space-around;
+		display: flex;
+		padding: 15px;
+		font-size: 18px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+
+}
