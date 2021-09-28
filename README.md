@@ -1,7 +1,8 @@
 # todo
-a simple todo list in react
 
-Build based on the requirements (and using the assets) of this Frontend Mentor's [challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).  
+A simple todo list in react
+
+Based on the requirements (and using the assets) of this Frontend Mentor's [challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).  
 
 ## Requeriments
 
