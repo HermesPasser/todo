@@ -32,7 +32,8 @@ body {
 	--text: var(--dvark-grayish-blue);
 	--text-grayed: var(--very-light-grayish-blue);
 	--text-bottom: var(--dark-grayish-blue);
-	--text-bottom-selected: var(--light-grayish-blue-hover);
+	--text-bottom-hover: var(--dark-grayish-blue);
+	--text-bottom-selected: var(--bright-blue);
 
 	margin: 0;
 	padding-top: 100px;
@@ -54,7 +55,7 @@ body {
 	--text: var(--dvark-grayish-blue);
 	--text-grayed: var(--very-dark-grayish-blue1);
 	--text-bottom:  var(--very-dark-grayish-blue1);
-	--text-bottom-selected: var(--light-grayish-blue);
+	--text-bottom-hover: var(--light-grayish-blue-hover);
 
 	background-image: url('assets/bg-desktop-dark.jpg');
 }
@@ -114,6 +115,11 @@ header button {
 	margin-left: 10px;
 }
 
+.filter-wrapper span:hover {
+	color: var(--text-bottom-hover);
+	font-weight: 700;
+}
+
 .filter-wrapper {
 	display: flex;
     justify-content: space-between;
@@ -121,6 +127,10 @@ header button {
 	color: var(--text-bottom);
 	font-size: small;
 	font-weight: 300;
+}
+
+.selectedClass {
+	color: var(--text-bottom-selected);
 }
 
 .inner-filter-wrapper span:nth-child(2) {

@@ -4,6 +4,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 export default function List({state, setState}) {
     const items = [...state.listItems]
     const length = items.length
+    const selected = state.activeFilter
     let itemsOnDisplay = []
 
     if (state.activeFilter === 0) {
@@ -55,9 +56,22 @@ export default function List({state, setState}) {
         <div className="filter-wrapper">
             <p>{length} items left</p>
             <div className="inner-filter-wrapper">
-                <span onClick={() => filterClicked(0)} >All</span>
-                <span onClick={() => filterClicked(1)} >Active</span>
-                <span onClick={() => filterClicked(2)} >Completed</span>
+                <span 
+                    onClick={() => filterClicked(0)} 
+                    className={selected === 0 ? 'selectedClass' : ''}
+                    >
+
+                    All</span>
+                <span 
+                    onClick={() => filterClicked(1)}
+                    className={selected === 1 ? 'selectedClass' : ''}
+                    >
+                    Active</span>
+                <span 
+                    onClick={() => filterClicked(2)}
+                    className={selected === 2 ? 'selectedClass' : ''}
+                    >
+                    Completed</span>
             </div>
             <span onClick={clearClicked}>Clear Completed</span>
         </div>
