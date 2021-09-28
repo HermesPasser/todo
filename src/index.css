@@ -25,20 +25,13 @@
 }
 
 body {
-	--very-light-gray: hsl(0, 0%, 98%);
-	--very-light-grayish-blue: hsl(236, 33%, 92%);
-	--light-grayish-blue: hsl(233, 11%, 84%);
-	--dark-grayish-blue: hsl(236, 9%, 61%);
-
-
 	--bg: white;
 	--fg: var(--very-light-gray);
 	--border: var(--very-light-grayish-blu);
 	--border-bottom: var(--dark-grayish-blue);
-	--text: var(--very-dark-grayish-blue);
-	/* --text-grayed: red; */
+	--text: var(--dvark-grayish-blue);
+	--text-grayed: var(--very-light-grayish-blue);
 	--text-bottom: var(--dark-grayish-blue);
-	/* ACHO QUE DEVE FICAR com esse debaixo on hover, o selecionado é blue */
 	--text-bottom-selected: var(--light-grayish-blue-hover);
 
 	margin: 0;
@@ -55,22 +48,17 @@ body {
 }
 
 .dark {
-	--very-dark-blue: hsl(235, 21%, 11%);
-	--very-dark-desaturated-blue: hsl(235, 24%, 19%);
-	--light-grayish-blue: hsl(234, 39%, 85%);
-	--light-grayish-blue-hover: hsl(236, 33%, 92%);
-	--dvark-grayish-blue: hsl(234, 11%, 52%);
-	--very-dark-grayish-blue1: hsl(233, 14%, 35%);
-	--very-dark-grayish-blue: hsl(237, 14%, 26%);
-
 	--bg: var(--very-dark-blue);
 	--fg: var(--very-dark-desaturated-blue);
 	--border-bottom: var(--very-dark-grayish-blue);
-	--text: var(--light-grayish-blue);
-	/* --text-grayed: var(--dvark-grayish-blue); */
-	--text-bottom:  var(--dvark-grayish-blue);
-	/* --text-bottom-selected: v */
+	--text: var(--dvark-grayish-blue);
+	--text-grayed: var(--very-dark-grayish-blue1);
+	--text-bottom:  var(--very-dark-grayish-blue1);
+	--text-bottom-selected: var(--light-grayish-blue);
+
+	background-image: url('assets/bg-desktop-dark.jpg');
 }
+
 main {
 	width: 40%;
 	margin: auto;
@@ -105,6 +93,8 @@ header button {
 
 .list {
 	margin-top: 20px;
+	background-color: var(--fg);
+	border-radius: 10px;
 }
 
 .list span {
@@ -116,10 +106,6 @@ header button {
 	justify-content: space-between;
 	padding: 20px;
 	border-bottom: 1px solid;
-	/* border-bottom: 1px solid #606060; */
-	/* background-color: #25273c; */
-	background-color: var(--fg);
-	/* color: white; */
 	border: 1px solid var(--border);
 	border-bottom: 1px solid var(--border-bottom);
 }
@@ -132,9 +118,8 @@ header button {
 	display: flex;
     justify-content: space-between;
     padding: 15px;
-	color: var(--text-bottom)
-    /* background-color: #25273c;*/
-	
+	color: var(--text-bottom);
+	font-size: small;
 }
 
 .inner-filter-wrapper span:nth-child(2) {
@@ -147,15 +132,16 @@ ul {
 
 .new-todo-wrapper {
 	background-color: var(--fg);
-	/* background-color: var(--very-light-gray); */
-	display: flex;
+	border-radius: 10px;
 	align-items: center;
+	display: flex;
 }
 
 .new-todo-wrapper input:nth-child(2) {
 	width: 100%;
 	padding: 10px 0 10px 0;
 	background-color: transparent;
+	padding-left: 10px;
 }
 
 input[type="text"] {
@@ -166,8 +152,10 @@ input[type="text"] {
 	padding-top: 10px;
 	text-align: center;
 	color: var(--text-bottom);
+	font-size: small;
 }
 
 .completed-task {
 	text-decoration: line-through;
+	color: var(--text-grayed);
 }
