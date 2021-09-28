@@ -1,10 +1,11 @@
-import ListItem from "./ListItem";
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import ListItem from "./ListItem"
+import { Fragment } from "react"
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import FIlterOptions from "./FIlterOptions"
 
 export default function List({state, setState}) {
     const items = [...state.listItems]
     const length = items.length
-    const selected = state.activeFilter
     let itemsOnDisplay = []
 
     if (state.activeFilter === 0) {
@@ -15,7 +16,6 @@ export default function List({state, setState}) {
         itemsOnDisplay = items.filter(item => item.done)
     }
     
-    const filterClicked = (id) => setState({...state, activeFilter: id})
     const clearClicked = () => setState({
         ...state, 
         listItems: state.listItems.filter(item => !item.done)        
@@ -35,50 +35,36 @@ export default function List({state, setState}) {
     return (
         <DragDropContext onDragEnd={itemDragged}>
             <Droppable droppableId="list">
-                {(provided) => (
-    <div className="list" {...provided.droppableProps} ref={provided.innerRef} >
-        <ul >
-            {
-                itemsOnDisplay.map((item, i) => {
-                    return <ListItem
-                        state={state}
-                        setState={setState}
-                        
-                        label={item.text}
-                        checked={item.done}
-                        id={item.id}
-                        value={i}  /> 
-                })
-            }
-            {provided.placeholder}
-        </ul>
-
-        <div className="filter-wrapper">
-            <p>{length} items left</p>
-            <div className="inner-filter-wrapper">
-                <span 
-                    onClick={() => filterClicked(0)} 
-                    className={selected === 0 ? 'selectedClass' : ''}
-                    >
-
-                    All</span>
-                <span 
-                    onClick={() => filterClicked(1)}
-                    className={selected === 1 ? 'selectedClass' : ''}
-                    >
-                    Active</span>
-                <span 
-                    onClick={() => filterClicked(2)}
-                    className={selected === 2 ? 'selectedClass' : ''}
-                    >
-                    Completed</span>
-            </div>
-            <span onClick={clearClicked}>Clear Completed</span>
-        </div>
-        </div>
-                    
-                    
-                    )}
+                {(provided) => 
+                    <Fragment>
+                        <div className="list" {...provided.droppableProps} ref={provided.innerRef} >
+                            <ul >
+                                {
+                                    itemsOnDisplay.map((item, i) => {
+                                        return <ListItem
+                                            state={state}
+                                            setState={setState}
+                                            
+                                            label={item.text}
+                                            checked={item.done}
+                                            id={item.id}
+                                            value={i}  /> 
+                                    })
+                                }
+                                {provided.placeholder}
+                            </ul>
+            
+                            <div className="filter-wrapper">
+                                <p>{length} items left</p>
+                                <div className="inner-filter-wrapper">
+                                    <FIlterOptions state={state} setState={setState} />
+                                </div>
+                                <span onClick={clearClicked}>Clear Completed</span>
+                            </div>
+                        </div>
+                       
+                    </Fragment>
+                }
             </Droppable>
         </DragDropContext>
     )    
